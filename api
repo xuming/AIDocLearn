@@ -1,0 +1,24 @@
+行情3.0 接口
+
+/**
+ * 获取市场状态
+ * 可以用此函数获取市场状态 ，如果状态为0，不能继续执行市场有关的操作
+ * @ingroup market
+ * @param market 市场ID
+ * @return 市场状态
+ * @retval 0 未创建
+ * @retval 1 已创建 
+ */
+int GetMarketStatus(hq_marketid_type market);
+
+
+/**
+ * 对市场进行初始化，所有需要用到市场的地方，都应该在第一次使用时调用此函数
+ * @ingroup market
+ * @param market 市场ID
+ * @param readonly 是否只读  对于接入类型的组件，应该设置为true
+ * @retval 1 成功  
+ * @retval <1 失败  
+ * @ingroup market
+ */
+int  InitMarket(int  market, bool readonly = true);
